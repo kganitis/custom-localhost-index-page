@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localhost Directory Listing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #141414;
+            color: #f1f1f1;
+        }
+
+        /* Add a fancy background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('img/connectwork.png') repeat #141414;
+        }
+
+        h1 {
+            color: #1abc9c;
+            text-align: center;
+            margin: 60px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #1abc9c;
+            margin: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+            letter-spacing: 1px;
+        }
+
+        #serverStatus {
+            max-width: calc(16.66% - 20px);
+            margin: 20px auto;
+            color: #f1f1f1;
+            text-align: center;
+        }
+
+        #serverStatus p {
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        li {
+            margin: 10px;
+            /* Adjust this to change the number of columns */
+            flex: 0 0 calc(16.66% - 20px);
+            max-width: calc(16.66% - 20px);
+        }
+
+        a {
+            border: 1px solid #1abc9c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(26, 188, 156, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            color: #1abc9c;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            background-color: #222;
+        }
+
+        a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(26, 188, 156, 0.2);
+        }
+
+        .site-title {
+            display: flex;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .site-title img {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        .site-description {
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        .special-link {
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(to right, #1abc9c, #2ecc71);
+            color: #f1f1f1;
+        }
+
+        .fas {
+            margin-right: 10px;
+        }
+
+        .special-link .site-description {
+            color: #f1f1f1;
+            font-size: 14px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>localhost</h1>
+
+    <!-- Server Status -->
+    <a href="server-status.php" target="_blank" id="serverStatus">
+        <h2 style="margin-bottom: 30px;">Server Status</h2>
+    </a>
+
+    <!-- XAMPP Links -->
+    <h2>XAMPP Links</h2>
+    <ul>
+        <!-- Dashboard -->
+        <li>
+            <a href="dashboard" target="_blank" class="special-link">
+                <div class="site-title">
+                    <i class="fas fa-desktop"></i>XAMPP Dashboard
+                </div>
+                <div class="site-description">XAMPP Control Panel</div>
+            </a>
+        </li>
+
+        <!-- phpMyAdmin -->
+        <li>
+            <a href="phpmyadmin" target="_blank" class="special-link">
+                <div class="site-title">
+                    <i class="fas fa-database"></i>phpMyAdmin
+                </div>
+                <div class="site-description">MariaDB Database Management</div>
+            </a>
+        </li>
+
+        <!-- phpinfo() -->
+        <li>
+            <a href="dashboard/phpinfo.php" target="_blank" class="special-link">
+                <div class="site-title">
+                    <i class="fas fa-info-circle"></i>phpinfo()
+                </div>
+                <div class="site-description">PHP Configuration Information</div>
+            </a>
+        </li>
+
+        <!-- Applications -->
+        <li>
+            <a href="applications.html" target="_blank" class="special-link">
+                <div class="site-title">
+                    <i class="fas fa-cogs"></i>Applications
+                </div>
+                <div class="site-description">Bitnami Open Source Applications Available on XAMPP</div>
+            </a>
+        </li>
+
+        <!-- FAQs -->
+        <li>
+            <a href="dashboard/faq.html" target="_blank" class="special-link">
+                <div class="site-title">
+                    <i class="fas fa-question-circle"></i>FAQs
+                </div>
+                <div class="site-description">OS X Frequently Asked Questions</div>
+            </a>
+        </li>
+
+        <!-- How-To-Guides -->
+        <li>
+            <a href="dashboard/howto.html" target="_blank" class="special-link">
+                <div class="site-title">
+                    <i class="fas fa-book"></i>How-To-Guides
+                </div>
+                <div class="site-description">OS X HOW-TO Guides</div>
+            </a>
+        </li>
+    </ul>
+
+    <!-- List of Sites -->
+    <h2>My Sites</h2>
+    <ul>
+        <li>
+            <a href="Sites/kganitis/kostasganitis.com/gallery.html" target="_blank">
+                <div class="site-title">
+                    <img src="Sites/kganitis/kostasganitis.com/graphics/favicons/favicon.ico"></img>kostasganitis.com
+                </div>
+                <div class="site-description">My Personal Website</div>
+            </a>
+        </li>
+        <li>
+            <a href="Sites/unipi/mppl2212_final/introduction.html" target="_blank">
+                <div class="site-title">
+                    <img src="Sites/unipi/mppl2212_final/favicon.png"></img>ShotSphere
+                </div>
+                <div class="site-description">Τεχνολογίες Διαδικτύου - Τελική Εργασία Β' Εξαμήνου</div>
+            </a>
+        </li>
+    </ul>
+
+    <div class="footer">
+        Powered by
+        <a href="https://www.apachefriends.org/" target="_blank" style="margin-top: 10px;">XAMPP</a>
+    </div>
+
+    <script>
+        // Function to fetch server-status information and update the content
+        function fetchServerStatus() {
+            fetch("http://localhost/server-status")
+                .then(response => response.text())
+                .then(data => {
+                    // Extract relevant information from the server-status page
+                    var regex = /Total accesses: ([0-9]+) - Total Traffic: ([0-9]+(?:\.[0-9]+)?) (kB|MB) - Total Duration: ([0-9]+)/;
+                    const [, totalAccesses, totalTraffic, trafficUnit, totalDuration] = data.match(regex);
+
+                    // Extract server uptime
+                    regex = /Server uptime:\s*(?:([0-9]+) hour(?:s?))?\s*(?:([0-9]+) minute(?:s?))?\s*(?:([0-9]+) second(?:s?))?/
+                    const [, uptimeHours, uptimeMinutes, uptimeSeconds] = data.match(regex);
+
+                    // Format the information and update the content
+                    const serverStatusElement = document.getElementById("serverStatus");
+                    serverStatusElement.innerHTML = `
+                        <h2 style="margin-bottom: 30px;">Server Status</h2>
+                        <p>Uptime: ${formatTime(uptimeHours, uptimeMinutes, uptimeSeconds)}</p>
+                        <p>Total Accesses: ${totalAccesses}</p>
+                        <p>Total Traffic: ${totalTraffic} ${trafficUnit}</p>
+                        <p>Total Duration: ${totalDuration}</p>
+                    `;
+                })
+                .catch(error => {
+                    console.error("Error fetching server-status:", error);
+                });
+        }
+
+        // Function to format time as "HHh MMm SSs" excluding missing parts
+        function formatTime(hours, minutes, seconds) {
+            let formattedTime = '';
+            if (hours) {
+                formattedTime += hours + 'h ';
+            }
+            if (minutes) {
+                formattedTime += minutes + 'm ';
+            }
+            if (seconds) {
+                formattedTime += seconds + 's';
+            }
+            return formattedTime.trim();
+        }
+
+        // Call the fetchServerStatus function when the page loads
+        document.addEventListener("DOMContentLoaded", fetchServerStatus);
+    </script>
+</body>
+
+</html>
