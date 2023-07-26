@@ -116,7 +116,7 @@
     <script>
         // Function to fetch server-status information and update the content
         function fetchServerStatus() {
-            fetch("http://localhost/server-status")
+            fetch("get_server_status.php")
                 .then(response => response.text())
                 .then(data => {
                     // Extract relevant information from the server-status page
