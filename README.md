@@ -24,7 +24,7 @@ A customized index.html page for XAMPP's localhost on macOS, offering a comprehe
 3. Place the `connectwork.png` in the `/img` directory of XAMPP server's root directory.
 4. Open your web browser and navigate to the XAMPP server's URL to view the customized page.
 
-## Accessing Customized Localhost Page from Other Devices on your Local Network
+### Accessing Customized Localhost Page from Other Devices on your Local Network
 
 1. Find your IP Address:
 
@@ -46,7 +46,7 @@ A customized index.html page for XAMPP's localhost on macOS, offering a comprehe
         
    c. Look for the line that starts with "Listen" and change it to: `Listen 0.0.0.0:80`. This tells Apache to listen on all available network interfaces.
 
-   d. In the `<Directory>` block of the configuration file, look for a line that contains `Require all granted`. If you find this line already present, you don't need to make any changes, as it allows access to all clients. If you don't find it, add it yourself. Place it within the         `<Directory>` block, typically right after the `AllowOverride All line` (if it exists), like this (there will probably exist many comment lines, starting with '#'):
+   d. In the `<Directory>` block of the configuration file, look for a line that contains `Require all granted`. If you find this line already present, you don't need to make any changes, as it allows access to all clients. If you don't find it, add it yourself. Place it within the `<Directory>` block, typically right after the `AllowOverride All line` (if it exists), like this (there will probably exist many comment lines, starting with '#'):
    
    ```
    <Directory "/Applications/XAMPP/xamppfiles/htdocs">
