@@ -120,12 +120,12 @@
                 .then(response => response.text())
                 .then(data => {
                     // Extract relevant information from the server-status page
-                    var regex = /Total accesses: ([0-9]+) - Total Traffic: ([0-9]+(?:\.[0-9]+)?) (kB|MB) - Total Duration: ([0-9]+)/;
-                    const [, totalAccesses, totalTraffic, trafficUnit, totalDuration] = data.match(regex);
+                    var regex = /Total accesses: ([0-9]+) - Total Traffic: ([0-9]+(?:\.[0-9]+)?) (kB|MB|GB) - Total Duration: ([0-9]+)/;
+                    const [, totalAccesses, totalTraffic, totalTrafficUnit, totalDuration] = data.match(regex);
 
                     // Extract server uptime
-                    regex = /Server uptime:\s*(?:([0-9]+) hour(?:s?))?\s*(?:([0-9]+) minute(?:s?))?\s*(?:([0-9]+) second(?:s?))?/
-                    const [, uptimeHours, uptimeMinutes, uptimeSeconds] = data.match(regex);
+                    regex = /Server uptime:\s*(?:([0-9]+) day(?:s?))?\s*(?:([0-9]+) hour(?:s?))?\s*(?:([0-9]+) minute(?:s?))?\s*(?:([0-9]+) second(?:s?))?/
+                    const [, uptimeDays, uptimeHours, uptimeMinutes, uptimeSeconds] = data.match(regex);
 
                     // Format the information and update the content
                     const serverStatusElement = document.getElementById("serverStatus");
@@ -134,7 +134,7 @@
                         <table id="serverStatusTable">
                             <tr>
                             <th>Uptime:</th>
-                            <td>${formatTime(uptimeHours, uptimeMinutes, uptimeSeconds)}</td>
+                            <td>${formatTime(uptimeDays, uptimeHours, uptimeMinutes, uptimeSeconds)}</td>
                             </tr>
                             <tr>
                                 <th>Total Accesses:</th>
@@ -142,7 +142,7 @@
                             </tr>
                             <tr>
                                 <th>Total Traffic:</th>
-                                <td>${totalTraffic} ${trafficUnit}</td>
+                                <td>${totalTraffic} ${totalTrafficUnit}</td>
                             </tr>
                             <tr>
                                 <th>Total Duration:</th>
@@ -157,8 +157,11 @@
         }
 
         // Function to format time as "HHh MMm SSs" excluding missing parts
-        function formatTime(hours, minutes, seconds) {
+        function formatTime(days, hours, minutes, seconds) {
             let formattedTime = '';
+            if (days) {
+                formattedTime += days + 'd ';
+            }
             if (hours) {
                 formattedTime += hours + 'h ';
             }
