@@ -20,8 +20,8 @@ A customized index.html page for XAMPP's localhost on macOS, offering a comprehe
 ## Setup and Usage
 
 1. Clone this repository to your local machine.
-2. Copy the `index.html`, `get_server_status.php`, and `server_status.php` files to your XAMPP server's root directory.
-3. Place the `connectwork.png` in the `/img` directory of XAMPP server's root directory.
+2. Copy the `index.html`, `styles.css`, `get_server_status.php`, and `server_status.php` files to your XAMPP server's root directory.
+3. Copy the `connectwork.png` (found in the repository's `/img` directory) to the `/img` directory of XAMPP server's root directory.
 4. Open your web browser and navigate to the XAMPP server's URL to view the customized page.
 
 ### Adding Sites to the Customized Localhost Page
