@@ -24,6 +24,37 @@ A customized index.html page for XAMPP's localhost on macOS, offering a comprehe
 3. Place the `connectwork.png` in the `/img` directory of XAMPP server's root directory.
 4. Open your web browser and navigate to the XAMPP server's URL to view the customized page.
 
+### Adding Sites to the Customized Localhost Page
+
+To add your own web projects or sites to this customized localhost page, follow these steps:
+
+1. **Create Your Site Folder:**
+    - Place your web project's files in a new folder under the htdocs directory of XAMPP.
+    - Ensure each site has an index.html or similar entry point file.
+2. **Add the Site Link in the `index.html` File:**
+    - Open the index.html file in a text editor.
+    - Locate the `<ul>` element under the "My Sites" `<h2>` header.
+    - Add a new `<li>` block for each site you want to include, following this structure:
+        ``` html
+        <li>
+            <a href="path/to/your-site-folder" target="_blank">
+                <div class="site-title">
+                    <img src="path/to/favicon.ico" alt="Site Icon">Your Site Title
+                </div>
+                <div class="site-description">A brief description of your site.</div>
+            </a>
+        </li>
+        ```
+    - Replace `path/to/your-site-folder` with the relative path to your site folder.
+    - Update `path/to/favicon.ico` to the path of your site's favicon. You can place the favicon in the same folder as your project files or in a designated icon directory.
+    - Replace `Your Site Title` with the name of your site and `A brief description of your site` with a description of what the site does or contains.
+3. **Verify Your Additions:**
+    - Save the `index.html` file.
+    - Open your browser and go to the XAMPP server's URL (e.g., http://localhost) to ensure the new site link appears correctly under the "My Sites" section.
+    - Click on the new site link to verify it opens your project as expected.
+
+By following these steps, you can easily showcase your web projects on your customized XAMPP localhost page for quick access.
+
 ### Accessing Customized Localhost Page from Other Devices on your Local Network
 
 1. Find your IP Address:
